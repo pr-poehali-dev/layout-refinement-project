@@ -266,7 +266,7 @@ const Index = () => {
       <section className="py-16 bg-ocean-light">
         <div className="container">
           <SectionHead title="Всё необходимое — рядом" subtitle="Сервисы в шаговой доступности" />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-10">
             {nearby.map((n) => (
               <a key={n.title} href="#" className="group flex flex-col items-center gap-3 bg-white rounded-2xl py-8 px-4 shadow-sm hover-scale">
                 <span className="w-14 h-14 rounded-full bg-ocean-light flex items-center justify-center text-ocean-dark group-hover:bg-ocean group-hover:text-white transition-colors">
