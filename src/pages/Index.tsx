@@ -211,7 +211,7 @@ const Index = () => {
       {/* 2.5 Где поесть */}
       <section className="py-16 bg-white">
         <div className="container">
-          <SectionHead title="Кафе и столовые Екатерининского квартала" subtitle="Разнообразие кухни и форматов — от классики до стритфуда." />
+          <SectionHead title="Где поесть" subtitle="Разнообразие кухни и форматов — от классики до стритфуда." />
           <div className="grid md:grid-cols-3 gap-6 mt-10">
             {eateries.map((e) => (
               <div key={e.title} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-slate-100 flex flex-col">
