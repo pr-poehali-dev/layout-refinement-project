@@ -34,6 +34,8 @@ const nearby = [
   { icon: 'Stethoscope', title: 'Медпункт' },
   { icon: 'Car', title: 'Парковка' },
   { icon: 'WashingMachine', title: 'Прачечная' },
+  { icon: 'Pill', title: 'Аптека' },
+  { icon: 'ShoppingBasket', title: 'Минимаркет' },
 ];
 
 const activities = [
