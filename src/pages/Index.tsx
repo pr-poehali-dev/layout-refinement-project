@@ -30,7 +30,7 @@ const infrastructure = [
 ];
 
 const nearby = [
-  { icon: 'Coffee', title: 'Кафе и столовые' },
+  { icon: 'Fence', title: 'Детские площадки' },
   { icon: 'Stethoscope', title: 'Медпункт' },
   { icon: 'Car', title: 'Парковка' },
   { icon: 'WashingMachine', title: 'Прачечная' },
@@ -46,6 +46,45 @@ const rooms = [
   { img: IMG.std, title: 'Стандарт', text: 'Уютный номер с видом на море', tags: ['2 гостя', 'Вид на море', 'Wi-Fi'] },
   { img: IMG.lux, title: 'Люкс', text: 'Просторный номер с балконом', tags: ['3 гостя', 'Балкон', 'Кондиционер'] },
   { img: IMG.fam_room, title: 'Семейный', text: 'Идеален для отдыха с детьми', tags: ['4 гостя', 'Детская зона', 'Мини-бар'] },
+];
+
+const eateries = [
+  {
+    img: 'https://cdn.poehali.dev/projects/825b887f-cbf8-4b82-ba4d-6fed939a1887/files/385cf037-a9cc-477a-ad8f-652f3bd5a26b.jpg',
+    title: 'Времена года',
+    text: 'Коммерческая столовая предлагает разнообразные блюда и напитки, включая домашнюю кухню.',
+    tags: ['Столовая', 'Большой выбор'],
+  },
+  {
+    img: 'https://cdn.poehali.dev/projects/825b887f-cbf8-4b82-ba4d-6fed939a1887/files/84e30b40-8f05-4ebf-a92a-12c9555aed0d.jpg',
+    title: 'Трюффо',
+    text: 'Уютный лобби-бар — отличное место для лёгкого перекуса, чашки ароматного кофе или освежающего лимонада.',
+    tags: ['Кофе с собой', 'Вкусные завтраки'],
+  },
+  {
+    img: 'https://cdn.poehali.dev/projects/825b887f-cbf8-4b82-ba4d-6fed939a1887/files/aff90d39-1117-4beb-87c6-b0f6f8cf1927.jpg',
+    title: 'Мидийный сезон',
+    text: 'Ароматные мидии, сытная паста и лёгкие салаты для тех, кто ценит средиземноморский вкус и морепродукты.',
+    tags: ['Рекомендуем', 'Мидии'],
+  },
+  {
+    img: 'https://cdn.poehali.dev/projects/825b887f-cbf8-4b82-ba4d-6fed939a1887/files/0ab031b6-ffe2-41cb-95b5-1ee5397bf445.jpg',
+    title: 'Китано-Челентано',
+    text: 'Итальянская пицца с хрустящей корочкой, японские суши, кавказский шашлык и душевные завтраки для тех, кто любит есть с удовольствием.',
+    tags: ['Итальянская', 'Роллы'],
+  },
+  {
+    img: 'https://cdn.poehali.dev/projects/825b887f-cbf8-4b82-ba4d-6fed939a1887/files/17852e80-0814-4a2a-a3fd-1583fcd4361c.jpg',
+    title: 'Бульвар',
+    text: 'Продуманное меню и внимание к деталям. Удобное расположение, уютная атмосфера и гостеприимное обслуживание.',
+    tags: ['Столовая', 'Уютная обстановка'],
+  },
+  {
+    img: 'https://cdn.poehali.dev/projects/825b887f-cbf8-4b82-ba4d-6fed939a1887/files/c05b0abe-6e2f-4e16-990b-3267846f7d75.jpg',
+    title: 'Лакомка',
+    text: 'Свежие фрукты, традиционные восточные десерты, натуральные сладости и яркие лакомства для детей и взрослых.',
+    tags: ['Для сладкоежек', 'Свежие фрукты'],
+  },
 ];
 
 const Index = () => {
@@ -161,6 +200,34 @@ const Index = () => {
                   </div>
                   <Button className="mt-5 w-full rounded-xl bg-ocean hover:bg-ocean-dark text-white">
                     <Icon name="CalendarCheck" size={18} className="mr-2" /> Забронировать
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 2.5 Где поесть */}
+      <section className="py-16 bg-white">
+        <div className="container">
+          <SectionHead title="Кафе и столовые Екатерининского квартала" subtitle="Разнообразие кухни и форматов — от классики до стритфуда." />
+          <div className="grid md:grid-cols-3 gap-6 mt-10">
+            {eateries.map((e) => (
+              <div key={e.title} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow border border-slate-100 flex flex-col">
+                <div className="h-52 overflow-hidden relative">
+                  <img src={e.img} alt={e.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute bottom-3 left-3 flex gap-2 flex-wrap">
+                    {e.tags.map((t) => (
+                      <span key={t} className="text-xs bg-white/90 backdrop-blur text-slate-700 px-2.5 py-1 rounded-full font-medium shadow-sm">{t}</span>
+                    ))}
+                  </div>
+                </div>
+                <div className="p-5 flex flex-col flex-1">
+                  <h3 className="font-heading font-bold text-lg text-slate-800">{e.title}</h3>
+                  <p className="text-slate-500 text-sm mt-2 flex-1">{e.text}</p>
+                  <Button className="mt-5 w-full rounded-xl bg-ocean hover:bg-ocean-dark text-white">
+                    Подробнее
                   </Button>
                 </div>
               </div>
