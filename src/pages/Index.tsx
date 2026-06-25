@@ -21,12 +21,12 @@ const IMG = {
 const navLinks = ['О городе-отеле', 'Кварталы', 'Номера', 'Услуги', 'Акции', 'Лечение', 'MICE', 'Доступная среда', 'Экскурсии', 'Афиша'];
 
 const infrastructure = [
-  { img: IMG.health, title: 'Центр Здоровья', text: 'Профессиональный медицинский центр' },
-  { img: IMG.kids, title: 'Детский клуб', text: 'Развлечения и присмотр за детьми' },
-  { img: IMG.conf, title: 'Конференц-залы', text: 'Современные залы для мероприятий' },
   { img: IMG.stage, title: 'Сцена', text: 'Для концертов и развлечений' },
+  { img: IMG.kids, title: 'Детский клуб', text: 'Развлечения и присмотр за детьми' },
+  { img: IMG.health, title: 'Центр Здоровья', text: 'Профессиональный медицинский центр' },
   { img: IMG.kids, title: 'Интерактивное пространство', text: 'Зона для творчества и отдыха' },
   { img: IMG.family, title: 'Семейный клуб', text: 'Пространство для всей семьи' },
+  { img: IMG.conf, title: 'Конференц-залы', text: 'Современные залы для мероприятий' },
 ];
 
 const nearby = [
@@ -134,38 +134,14 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Инфраструктура квартала */}
-      <Section title="Инфраструктура квартала" subtitle="Всё необходимое для комфортного отдыха">
+      {/* 1. Уникальная инфраструктура квартала */}
+      <Section title="Уникальная инфраструктура квартала" subtitle="Всё необходимое для комфортного отдыха">
         <div className="grid md:grid-cols-3 gap-6">
           {infrastructure.map((c) => <FeatureCard key={c.title} {...c} />)}
         </div>
       </Section>
 
-      {/* Всё необходимое — рядом */}
-      <section className="py-16 bg-ocean-light">
-        <div className="container">
-          <SectionHead title="Всё необходимое — рядом" subtitle="Сервисы в шаговой доступности" />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
-            {nearby.map((n) => (
-              <a key={n.title} href="#" className="group flex flex-col items-center gap-3 bg-white rounded-2xl py-8 px-4 shadow-sm hover-scale">
-                <span className="w-14 h-14 rounded-full bg-ocean-light flex items-center justify-center text-ocean-dark group-hover:bg-ocean group-hover:text-white transition-colors">
-                  <Icon name={n.icon} size={26} />
-                </span>
-                <span className="font-medium text-slate-700 text-center group-hover:text-ocean-dark transition-colors">{n.title}</span>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Активный отдых */}
-      <Section title="Активный отдых" subtitle="Спорт и движение на свежем воздухе">
-        <div className="grid md:grid-cols-3 gap-6">
-          {activities.map((c) => <FeatureCard key={c.title} {...c} />)}
-        </div>
-      </Section>
-
-      {/* Номера */}
+      {/* 2. Номера */}
       <section className="py-16 bg-slate-50">
         <div className="container">
           <SectionHead title="Номера" subtitle="Комфорт для каждого гостя" />
@@ -193,7 +169,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Ресепшен */}
+      {/* 3. Ресепшен и шведская линия */}
       <section className="py-16 bg-ocean-light">
         <div className="container grid md:grid-cols-2 gap-10 items-center">
           <div>
@@ -209,6 +185,42 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* 4. Активный отдых */}
+      <Section title="Активный отдых" subtitle="Спорт и движение на свежем воздухе">
+        <div className="grid md:grid-cols-3 gap-6">
+          {activities.map((c) => <FeatureCard key={c.title} {...c} />)}
+        </div>
+      </Section>
+
+      {/* 5. Всё необходимое — рядом */}
+      <section className="py-16 bg-ocean-light">
+        <div className="container">
+          <SectionHead title="Всё необходимое — рядом" subtitle="Сервисы в шаговой доступности" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+            {nearby.map((n) => (
+              <a key={n.title} href="#" className="group flex flex-col items-center gap-3 bg-white rounded-2xl py-8 px-4 shadow-sm hover-scale">
+                <span className="w-14 h-14 rounded-full bg-ocean-light flex items-center justify-center text-ocean-dark group-hover:bg-ocean group-hover:text-white transition-colors">
+                  <Icon name={n.icon} size={26} />
+                </span>
+                <span className="font-medium text-slate-700 text-center group-hover:text-ocean-dark transition-colors">{n.title}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. Мы на карте */}
+      <Section title="Мы на Карте" subtitle="Первая береговая линия, Сириус">
+        <div className="rounded-2xl overflow-hidden shadow-md border border-slate-100">
+          <iframe
+            title="Карта"
+            src="https://yandex.ru/map-widget/v1/?ll=39.952%2C43.398&z=14"
+            className="w-full h-[460px]"
+            loading="lazy"
+          />
+        </div>
+      </Section>
 
       {/* Footer */}
       <footer className="bg-ocean-dark text-white/80 py-12">
